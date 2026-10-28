@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio | Nama Kamu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(15, 23, 42, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #38bdf8;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+
+    /* Section Umum */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #38bdf8;
+    }
+
+    /* About */
+    .about p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #cbd5e1;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: #1e293b;
+      padding: 1.2rem;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #334155;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #334155;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .project-card .content {
+      padding: 1rem;
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      color: #38bdf8;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #38bdf8;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .contact-links a:hover {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #020617;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 0.8rem;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Portofolio</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#skills">Skill</a></li>
+      <li><a href="#projects">Proyek</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <img src="https://via.placeholder.com/150" alt="Foto Profil" />
+    <h1>Halo, saya <span>Nama Kamu</span></h1>
+    <p>Web Developer & UI Designer yang suka membangun aplikasi web modern dan responsif.</p>
+    <a href="#contact" class="btn">Hubungi Saya</a>
+  </header>
+
+  <!-- Tentang -->
+  <section class="about" id="about">
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya adalah seorang pengembang web yang berfokus pada pembuatan antarmuka pengguna yang
+      bersih dan pengalaman pengguna yang baik. Saya memiliki pengalaman dalam HTML, CSS,
+      JavaScript, dan berbagai framework modern. Saya senang belajar hal baru dan
+      menyelesaikan masalah melalui teknologi.
+    </p>
+  </section>
+
+  <!-- Skill -->
+  <section id="skills">
+    <h2>Skill</h2>
+    <div class="skills-grid">
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">React</div>
+      <div class="skill-card">Node.js</div>
+      <div class="skill-card">Figma</div>
+    </div>
+  </section>
+
+  <!-- Proyek -->
+  <section id="projects">
+    <h2>Proyek</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x160" alt="Proyek 1" />
+        <div class="content">
+          <h3>Website E-Commerce</h3>
+          <p>Toko online sederhana dengan fitur keranjang belanja menggunakan React dan Node.js.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x160" alt="Proyek 2" />
+        <div class="content">
+          <h3>Aplikasi Cuaca</h3>
+          <p>Aplikasi cuaca real-time yang mengambil data dari API OpenWeather.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x160" alt="Proyek 3" />
+        <div class="content">
+          <h3>Portofolio Pribadi</h3>
+          <p>Website portofolio responsif yang dibuat dengan HTML, CSS, dan JavaScript.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section class="contact" id="contact">
+    <h2>Kontak</h2>
+    <p>Ingin bekerja sama atau sekadar menyapa? Silakan hubungi saya melalui:</p>
+    <div class="contact-links">
+      <a href="mailto:email@kamu.com">Email</a>
+      <a href="https://github.com/username" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nama Kamu. Dibuat dengan ❤️ menggunakan HTML, CSS, & JavaScript.</p>
+  </footer>
+
+  <!-- Script Smooth Scroll -->
+  <script>
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
